@@ -1,5 +1,5 @@
 ---
-url: http://localhost:8081/
+url: http://localhost:8080/
 method: GET
 header:
   Accept: application/json, text/plain, */*
@@ -19,7 +19,7 @@ run_every:
   milliseconds: 300
 
 ---
-url: http://localhost:8081/401
+url: http://localhost:8080/401
 method: GET
 header:
   Accept: application/json, text/plain, */*
@@ -33,7 +33,7 @@ run_every:
   milliseconds: 500
 
 ---
-url: http://localhost:8081/500
+url: http://localhost:8080/500
 method: GET
 header:
   Accept: application/json, text/plain, */*
@@ -47,7 +47,7 @@ run_every:
   milliseconds: 600
 
 ---
-url: http://localhost:8081/502
+url: http://localhost:8080/502
 method: GET
 header:
   Accept: application/json, text/plain, */*
