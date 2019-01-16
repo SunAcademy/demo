@@ -1,0 +1,61 @@
+---
+url: http://localhost:8081/
+method: GET
+header:
+  Accept: application/json, text/plain, */*
+  Referer: http://localhost/
+body:
+range:
+  second:
+    gte: 1
+    lte: 20
+  # month:
+  #   gte: 8
+  #   lte: 12
+  # weekday:
+  #   gte: 0
+  #   lte: 5
+run_every:
+  milliseconds: 300
+
+---
+url: http://localhost:8081/401
+method: GET
+header:
+  Accept: application/json, text/plain, */*
+  Referer: http://localhost/
+body:
+range:
+  second:
+    gte: 10
+    lte: 30
+run_every:
+  milliseconds: 500
+
+---
+url: http://localhost:8081/500
+method: GET
+header:
+  Accept: application/json, text/plain, */*
+  Referer: http://localhost/
+body:
+range:
+  second:
+    gte: 30
+    lte: 50
+run_every:
+  milliseconds: 600
+
+---
+url: http://localhost:8081/502
+method: GET
+header:
+  Accept: application/json, text/plain, */*
+  Referer: http://localhost/
+body:
+range:
+  second:
+    gte: 30
+    lte: 50
+run_every:
+  milliseconds: 900
