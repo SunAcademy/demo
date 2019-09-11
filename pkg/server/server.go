@@ -2,6 +2,8 @@ package server
 
 import (
 	"net/http"
+	"github.com/vinkdong/demo/pkg/metrics"
+	"strconv"
 )
 
 type Server struct {
@@ -30,6 +32,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	case "/502":
 		statusCode = 502
 	}
+	metrics.HttpRequest.WithLabelValues(path,strconv.Itoa(statusCode)).Inc()
 	w.WriteHeader(statusCode)
 	w.Write([]byte("ok"))
 }

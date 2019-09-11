@@ -17,6 +17,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/vinkdong/demo/pkg/server"
+	"github.com/vinkdong/demo/pkg/metrics"
 )
 
 // serverCmd represents the server command
@@ -30,6 +31,10 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		ms := metrics.Server{
+			Addr: ":8081",
+		}
+		go ms.Start()
 		s := server.Server{
 			Addr: ":8080",
 		}
